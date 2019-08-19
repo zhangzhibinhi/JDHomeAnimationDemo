@@ -1,6 +1,8 @@
 # JDHomeAnimationDemo
 仿京东首页顶部搜索栏动画实现
 
+![DemoGIF](https://github.com/zhangzhibinhi/JDHomeAnimationDemo/blob/master/Demo.gif)
+
 ###动画效果分析
 1. 导航栏：根据滑动距离改变导航栏高度
 - 向上滑动时：导航栏高度减少（最小为44+safeAreaInset.top）
