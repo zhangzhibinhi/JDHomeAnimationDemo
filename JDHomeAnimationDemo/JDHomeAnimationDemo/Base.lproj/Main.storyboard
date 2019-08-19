@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R40-ZY-tj9">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="MWa-Fn-9kG">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="R40-ZY-tj9" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="diA-jI-CC1">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hzP-cW-8qv" kind="relationship" relationship="rootViewController" id="2A3-cJ-duj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="set-Bg-vsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-907" y="633"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="akn-0e-MIc">
+            <objects>
+                <viewController storyboardIdentifier="ReadViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hzP-cW-8qv" customClass="HomeViewController" customModule="WebViewTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lvf-7X-4O6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="Obs-g3-hcs">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJX-SS-liW" customClass="GradientView" customModule="WebViewTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1792"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VJX-SS-liW" firstAttribute="top" secondItem="Obs-g3-hcs" secondAttribute="top" id="7TV-w7-2Gg"/>
+                                    <constraint firstAttribute="bottom" secondItem="VJX-SS-liW" secondAttribute="bottom" id="iLU-BQ-Raf"/>
+                                    <constraint firstItem="VJX-SS-liW" firstAttribute="leading" secondItem="Obs-g3-hcs" secondAttribute="leading" id="kIC-nv-PL4"/>
+                                    <constraint firstAttribute="trailing" secondItem="VJX-SS-liW" secondAttribute="trailing" id="rS4-Cx-SRy"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="hzP-cW-8qv" id="KKX-14-dZd"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VJX-SS-liW" firstAttribute="width" secondItem="Lvf-7X-4O6" secondAttribute="width" id="2ie-4F-Zhg"/>
+                            <constraint firstItem="O2d-Xx-aOC" firstAttribute="trailing" secondItem="Obs-g3-hcs" secondAttribute="trailing" id="BnJ-De-wcN"/>
+                            <constraint firstItem="VJX-SS-liW" firstAttribute="height" secondItem="Lvf-7X-4O6" secondAttribute="height" multiplier="2" id="ROL-c3-Kw5"/>
+                            <constraint firstItem="O2d-Xx-aOC" firstAttribute="bottom" secondItem="Obs-g3-hcs" secondAttribute="bottom" id="Yl2-VG-K64"/>
+                            <constraint firstItem="Obs-g3-hcs" firstAttribute="leading" secondItem="O2d-Xx-aOC" secondAttribute="leading" id="onh-x3-3aL"/>
+                            <constraint firstItem="Obs-g3-hcs" firstAttribute="top" secondItem="O2d-Xx-aOC" secondAttribute="top" id="y23-Kr-lBM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O2d-Xx-aOC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Ua-2h-LaI"/>
+                    <connections>
+                        <outlet property="containerView" destination="VJX-SS-liW" id="GY5-nC-hUp"/>
+                        <outlet property="scrollView" destination="Obs-g3-hcs" id="VSy-VT-OUj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6AO-FV-uIs" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="633"/>
+        </scene>
+    </scenes>
+</document>
