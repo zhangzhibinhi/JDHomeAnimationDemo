@@ -50,7 +50,6 @@ class HomeViewController: UIViewController {
     }
     
     func setupTopView() {
-        self.animatedTopView.frame.origin.x = self.view.safeAreaInsets.top
         self.animatedTopView.backgroundColor = UIColor.red
         self.view.addSubview(self.animatedTopView)
     }
@@ -63,7 +62,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        self.animatedTopView.frame.size.height = scrollView.contentOffset.y <= 44 ? (108 - scrollView.contentOffset.y) : 64
+        self.animatedTopView.frame.size.height = (scrollView.contentOffset.y <= 44 ? (88 + self.view.safeAreaInsets.top - scrollView.contentOffset.y) : (44 + self.view.safeAreaInsets.top))
         self.view.setNeedsLayout()
     }
 }
